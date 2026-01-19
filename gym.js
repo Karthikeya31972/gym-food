@@ -1,16 +1,18 @@
-function order(meal, price, qtyId, timeId) {
-  const phone = "917780568606";
+function order(meal, price, qtyId) {
+  const phone = "917780568606"; // your WhatsApp number
   const qty = document.getElementById(qtyId).value;
-  const time = document.getElementById(timeId).value;
   const total = price * qty;
 
-  const message =
-    `Hello,\n` +
-    `I want to order:\n` +
-    `${meal}\n` +
-    `Quantity: ${qty}\n` +
-    `Delivery Time: ${time}\n` +
-    `Total Price: ₹${total}`;
+ const message =
+`Hello GymFuel Team,
+I want to order:
+
+Meal: ${meal}
+Quantity: ${qty}
+Delivery Time: ${time}
+Total Price: ₹${total}
+
+Please confirm.`;
 
   const url =
     `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
