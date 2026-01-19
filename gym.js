@@ -1,6 +1,7 @@
-function order(meal, price, qtyId) {
-  const phone = "917780568606"; // your WhatsApp number
+function order(meal, price, qtyId, timeId) {
+  const phone = "917780568606";
   const qty = document.getElementById(qtyId).value;
+  const time = document.getElementById(timeId).value;
   const total = price * qty;
 
   const message =
@@ -8,6 +9,7 @@ function order(meal, price, qtyId) {
     `I want to order:\n` +
     `${meal}\n` +
     `Quantity: ${qty}\n` +
+    `Delivery Time: ${time}\n` +
     `Total Price: ₹${total}`;
 
   const url =
@@ -15,3 +17,5 @@ function order(meal, price, qtyId) {
 
   window.location.href = url;
 }
+
+
