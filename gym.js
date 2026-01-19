@@ -1,23 +1,21 @@
-function order(meal, price, qtyId) {
-  const phone = "917780568606"; // your WhatsApp number
+function order(meal, price, qtyId, timeId) {
+  const phone = "917780568606"; // country code + number (NO +, NO spaces)
+
   const qty = document.getElementById(qtyId).value;
+  const time = document.getElementById(timeId).value;
   const total = price * qty;
 
- const message =
-`Hello GymFuel Team,
-I want to order:
-
-Meal: ${meal}
-Quantity: ${qty}
-Delivery Time: ${time}
-Total Price: ₹${total}
-
-Please confirm.`;
+  const message =
+    "Hello GymFuel Team,\n\n" +
+    "I want to order:\n" +
+    "Meal: " + meal + "\n" +
+    "Quantity: " + qty + "\n" +
+    "Delivery Time: " + time + "\n" +
+    "Total Price: ₹" + total + "\n\n" +
+    "Please confirm.";
 
   const url =
-    `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
-  window.location.href = url;
+  window.open(url, "_blank");
 }
-
-
