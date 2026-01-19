@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>GymFuel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="gym.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="gym.css" />
 </head>
 <body>
 
@@ -15,69 +15,62 @@
 
   <section class="meals">
 
-  <div class="meal-card">
-    <h2>Chicken Meal</h2>
-    <p>Rice + Chicken + Veg</p>
-    <p class="price">₹150</p>
+    <!-- Chicken Meal -->
+    <div class="meal-card">
+      <h2>Chicken Meal</h2>
+      <p>Rice + Chicken + Veg</p>
+      <p class="price">₹150</p>
 
-    <label>Quantity:</label>
-    <select id="chickenQty">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-    </select>
-   <label>Delivery Time:</label>
-<select id="chickenTime">
-  <option value="Morning (7–9 AM)">Morning (7–9 AM)</option>
-  <option value="Evening (6–8 PM)">Evening (6–8 PM)</option>
-</select>
+      <label>Quantity</label>
+      <select id="chickenQty">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
 
-    <button onclick="order('Chicken Meal', 150, 'chickenQty')">
-      Order Chicken Meal
-    </button>
-  </div>
+      <label>Delivery Time</label>
+      <select id="chickenTime">
+        <option value="Morning (7–9 AM)">Morning (7–9 AM)</option>
+        <option value="Evening (6–8 PM)">Evening (6–8 PM)</option>
+      </select>
 
-  <div class="meal-card">
-    <h2>Paneer Meal</h2>
-    <p>Rice + Paneer + Veg</p>
-    <p class="price">₹130</p>
+      <button onclick="order('Chicken Meal',150,'chickenQty','chickenTime')">
+        Order Chicken Meal
+      </button>
+    </div>
 
-    <label>Quantity:</label>
-    <select id="paneerQty">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-    </select>
-     <label>Delivery Time:</label>
-<select id="paneerTime">
-  <option value="Morning (7–9 AM)">Morning (7–9 AM)</option>
-  <option value="Evening (6–8 PM)">Evening (6–8 PM)</option>
-</select>
+    <!-- Paneer Meal -->
+    <div class="meal-card">
+      <h2>Paneer Meal</h2>
+      <p>Rice + Paneer + Veg</p>
+      <p class="price">₹130</p>
 
-   <button onclick="order('Paneer Meal', 130, 'paneerQty', 'paneerTime')">
-  Order Paneer Meal
-</button>
+      <label>Quantity</label>
+      <select id="paneerQty">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
 
-  </div>
+      <label>Delivery Time</label>
+      <select id="paneerTime">
+        <option value="Morning (7–9 AM)">Morning (7–9 AM)</option>
+        <option value="Evening (6–8 PM)">Evening (6–8 PM)</option>
+      </select>
 
-</section>
-<section class="trust">
-  <h3>Why GymFuel?</h3>
-  <ul>
-    <li>✔ Fresh food prepared daily</li>
-    <li>✔ Hygienic kitchen</li>
-    <li>✔ Gym-focused meals</li>
-    <li>✔ On-time delivery</li>
-  </ul>
-</section>
-<section class="plans">
-  <h3>Monthly Plans</h3>
-  <p>🥗 Weight Loss – ₹3,500 / month</p>
-  <p>💪 Muscle Gain – ₹4,500 / month</p>
-  <p>*Message on WhatsApp to subscribe*</p>
-</section>
+      <button onclick="order('Paneer Meal',130,'paneerQty','paneerTime')">
+        Order Paneer Meal
+      </button>
+    </div>
 
+  </section>
+
+  <footer>
+    <p>📍 Near XYZ Gym, Warangal</p>
+    <p>📞 WhatsApp: 7780568606</p>
+  </footer>
 
   <script src="gym.js"></script>
 </body>
 </html>
+
