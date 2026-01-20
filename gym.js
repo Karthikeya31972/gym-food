@@ -1,21 +1,53 @@
-function order(meal, price, qtyId, timeId) {
-  const phone = "917780568606"; // country code + number (NO +, NO spaces)
+async function order(meal, price, qtyId, timeId) {
+  const phoneEl = document.getElementById("phone");
+  const qtyEl = document.getElementById(qtyId);
+  const timeEl = document.getElementById(timeId);
 
-  const qty = document.getElementById(qtyId).value;
-  const time = document.getElementById(timeId).value;
-  const total = price * qty;
+  if (!phoneEl || !qtyEl || !timeEl) {
+    alert("Something is missing on the page ❌");
+    return;
+  }
 
-  const message =
-    "Hello GymFuel Team,\n\n" +
-    "I want to order:\n" +
-    "Meal: " + meal + "\n" +
-    "Quantity: " + qty + "\n" +
-    "Delivery Time: " + time + "\n" +
-    "Total Price: ₹" + total + "\n\n" +
-    "Please confirm.";
+  const phone = phoneEl.value;
+  const quantity = qtyEl.value;
+  const deliveryTime = timeEl.value;
+
+  if (!phone) {
+    alert("Please enter phone number");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:5000/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        meal,
+        price,
+        quantity,
+        phone,
+        deliveryTime
+      })
+    });
+
+    if (res.ok) {
+      alert("Order saved successfully ✅");
+    } else {
+      alert("Failed to save order ❌");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Backend not reachable ❌");
+  }
+}
+function payUPI(amount) {
+  const upiId = "7780568606-3@ibl";   // replace with your UPI
+  const name = "GymFuel";
 
   const url =
-    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR`;
 
-  window.open(url, "_blank");
+  window.location.href = url;
 }
