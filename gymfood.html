@@ -9,66 +9,76 @@
 <body>
 
   <header>
-    <h1>GymFuel</h1>
-    <p>Healthy Food for Gym People 💪</p>
+    <h1>GymFuel 💪</h1>
+    <p>Healthy Food for Gym People</p>
   </header>
 
-  <section class="meals">
-
-    <!-- Chicken Meal -->
-    <div class="meal-card">
-      <h2>Chicken Meal</h2>
-      <p>Rice + Chicken + Veg</p>
-      <p class="price">₹150</p>
-
-      <label>Quantity</label>
-      <select id="chickenQty">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
-
-      <label>Delivery Time</label>
-      <select id="chickenTime">
-        <option value="Morning (7–9 AM)">Morning (7–9 AM)</option>
-        <option value="Evening (6–8 PM)">Evening (6–8 PM)</option>
-      </select>
-
-      <button onclick="order('Chicken Meal',150,'chickenQty','chickenTime')">
-        Order Chicken Meal
-      </button>
+  <main>
+    <div class="user-input">
+      <label>Phone Number</label>
+      <input type="text" id="phone" placeholder="Enter phone number" />
     </div>
 
-    <!-- Paneer Meal -->
-    <div class="meal-card">
-      <h2>Paneer Meal</h2>
-      <p>Rice + Paneer + Veg</p>
-      <p class="price">₹130</p>
+    <section class="meals">
 
-      <label>Quantity</label>
-      <select id="paneerQty">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-      </select>
+      <!-- Chicken Meal -->
+      <div class="meal-card">
+        <h2>Chicken Meal</h2>
+        <p>Rice + Chicken + Veg</p>
+        <p class="price">₹150</p>
 
-      <label>Delivery Time</label>
-      <select id="paneerTime">
-        <option value="Morning (7–9 AM)">Morning (7–9 AM)</option>
-        <option value="Evening (6–8 PM)">Evening (6–8 PM)</option>
-      </select>
+        <label>Quantity</label>
+        <select id="chickenQty">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
 
-      <button onclick="order('Paneer Meal',130,'paneerQty','paneerTime')">
-        Order Paneer Meal
-      </button>
-    </div>
+        <label>Delivery Time</label>
+        <select id="chickenTime">
+          <option value="Morning">Morning</option>
+          <option value="Evening">Evening</option>
+        </select>
 
-  </section>
+        <button onclick="order('Chicken Meal',150,'chickenQty','chickenTime')">
+          Order Chicken Meal
+        </button>
+      </div>
 
+      <!-- Paneer Meal -->
+      <div class="meal-card">
+        <h2>Paneer Meal</h2>
+        <p>Rice + Paneer + Veg</p>
+        <p class="price">₹130</p>
+
+        <label>Quantity</label>
+        <select id="paneerQty">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+
+        <label>Delivery Time</label>
+        <select id="paneerTime">
+          <option value="Morning">Morning</option>
+          <option value="Evening">Evening</option>
+        </select>
+
+        <button onclick="order('Paneer Meal',130,'paneerQty','paneerTime')">
+          Order Paneer Meal
+        </button>
+        <button onclick="payUPI(150)">Pay via UPI</button>
+
+      </div>
+
+    </section>
+  </main>
+    
   <footer>
-    <p>📍 Near XYZ Gym, Warangal</p>
+    <p>📍 Near XYZ Gym</p>
     <p>📞 WhatsApp: 7780568606</p>
   </footer>
+  
 
   <script src="gym.js"></script>
 </body>
